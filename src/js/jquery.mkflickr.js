@@ -39,6 +39,9 @@
       // make sure the plugin is chainable...
       return this;
     },
+    galleryError:function(data){
+      $(this.element).html('<'+ this.settings.tag+' class="flickr-error">Error: ' + data.message + '. Check your API key and userID</'+ this.settings.tag+'>');
+    },
     buildGallery: function (data) {
       var arrPhotos = data.photos.photo;
       var sTag = this.settings.tag;
@@ -46,7 +49,7 @@
       $.map(arrPhotos, function (photo) {
         var strImg = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_t.jpg';
         var strLink = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_z.jpg';
-        $(me.element).find('div.' + me.settings.containerCssClass).append('<'+sTag+'><img src="'+strImg+'"/></'+sTag+'>');
+        $(me.element).find('div.' + me.settings.containerCssClass).append('<' + sTag + '><a href="' + strLink + '"><img src="' + strImg + '"/></a></' + sTag + '>');
       });
     },
     // doAjax, used to load the jsonp from Flickr
@@ -57,7 +60,12 @@
         url: this.buildFlickrUrl(),
         dataType: 'jsonp',
         success: function (data) {
-          me.buildGallery(data);
+          if (data.stat === 'ok') {
+            me.buildGallery(data);
+          } else {
+            me.galleryError(data);
+          }
+
         }
       });
     },
