@@ -127,22 +127,22 @@ code, pre {
   color: #222;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top:10px;
 }
 
 code { background-color: #f2f2f2; border: solid 1px #ddd; padding: 0 3px; }
 
 pre {
-  background: #303030;
-  color: #f2f2f2;
+  background: #f2f2f2;
   overflow: auto;
-  padding: 20px;
+  padding: 10px;
   text-shadow: none;
 }
 pre code {
-  background-color: #303030;
+  font-size:12px;
   border: none;
-  color: #f2f2f2;
+  color: #222;
   padding: 0;
 }
 
@@ -176,6 +176,7 @@ form { background: #f2f2f2; padding: 20px; }
 /* GENERAL ELEMENT TYPE STYLES */
 
 h1 { font-size: 32px; }
+h2 { font-size: 24px; }
 
 a { text-decoration: none; }
 

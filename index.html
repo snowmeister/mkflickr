@@ -30,27 +30,46 @@
             <h1>
             <a name="mkflickr" class="anchor" href="#mkflickr"><span class="octicon octicon-link"></span></a>mkflickr</h1>
             <p><strong>mkflickr</strong> is a jquery plugin to build a pretty gallery of images based on a users Flickr userID. <strong>Please note</strong>, you need a <a href="http://www.flickr.com/services/api/keys/apply/">Flickr developers API key</a> to use this plugin.</p>
-            <h2>
-            <a name="demos" class="anchor" href="#demos"><span class="octicon octicon-link"></span></a>Demos</h2>
+            <header><h2>Demo</h2></header>
             <p>This is a VERY early demo, as the plugin is still very much WIP, but at least it shows images from Flickr ;-).</p>
             <div id="gallery-test"></div>
-            <h2>
-            <a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
-            <p>Using the plugin is pretty simple. Just follow these steps</p>
-            <h3>Make sure you include jQuery!</h3>
+            <h2><a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+            <p>Using the plugin is pretty simple. Just follow these steps...</p>
+
+<header><h2>Required HTML markup</h2></header>
+            <p>The plugin requires a target DIV element in your page (only tested with DIVs so far, but this may well change).</p>
+           
+            <pre><code>&lt;div id="gallery-region"&gt;&lt;/div&gt;</code></pre>
+            <header><h2>Include the jQuery Library</h2></header>
             <p>If your project is not using jQuery already, make sure you include it. the mkFlickr plugin repo includes a copy of jquery-1.10.1.js.</p>
-            <code>
-<pre>
-&lt;script src="build/js/query-1.10.1.min.js"&gt;&lt;/script&gt;
+            <pre><code>&lt;script src="build/js/query-1.10.1.min.js"&gt;&lt;/script&gt;</code></pre>
+            <header><h2>Include the mkflickr plugin</h2></header>
+            <p>While you can create your own CSS for the gallery or omit CSS entirely if you really wanted to, you must include the jquery.mkflickr.js file in your page</p>
+           
+            <pre><code>&lt;script src="build/js/jquery.mkflickr.min.js"&gt;&lt;/script&gt;</code>
 </pre>
-            </code>
-            <h3>Include the mkflickr plugin</h3>
-            <p>While you can create your own CSS for the gallery or omit CSS entirely if you really wanted to, you muct include the jquery.mkflickr.js file in your page</p>
-            <code>
-<pre>
-&lt;script src="build/js/jquery.mkflickr.min.js"&gt;&lt;/script&gt;
+         
+
+         
+<header><h2>Initialising the plugin</h2></header>
+            <p>Finally, initialise the plugin</p>
+           
+            <pre><code>$(document).ready(function () {
+  $("#gallery-test").mkflickr({
+    apiKey: 'YOUR FLICKR API KEY',
+    userId: 'YOUR USER ID',
+    itemCount: 10,
+    tag: 'span'
+  });
+});</code>
 </pre>
-            </code>
+         <header><h2>Plugin Options</h2></header>
+         <ul>
+<li><strong>apiKey</strong>: Your <a href="http://www.flickr.com/services/api/keys/apply/">Flickr developers API key</a> as a string, eg: 'd980cbf534dffb23fa2611329cc10f98'</li>
+<li><strong>itemCount</strong>: Your Flickr user's id as a string, eg: '44123892@N01'</li>
+<li><strong>userID</strong>: Number of images you would like returned as a number (default is 20)</li>
+<li><strong>tag</strong>: The html tag you would like to wrap each image in (eg: 'span', 'div'). Coming soon, more flexibility and markup options.</li>
+         </ul>
           </section>
           <footer>
             mkFlickr is maintained by <a href="https://github.com/snowmeister">snowmeister</a><br>
