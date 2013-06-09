@@ -1,0 +1,10 @@
+###SublimeText###
+ 
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
+sftp-config*.json
+
+/*/.DS_Store
+.DS_Store
+/node_modules/*
