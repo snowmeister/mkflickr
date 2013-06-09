@@ -8,10 +8,10 @@ An exercise in using GRUNT, and following current methods of development for per
 Demos
 -----
 
-Coming soon...
+See the [plugin's GitHub page for a simple demo] (http://snowmeister.github.io/mkflickr/) (more to follow as work progresses)
 
 Documentation
 -------------
 
-Coming soon...
+See the [plugin's GitHub page] (http://snowmeister.github.io/mkflickr/) for basic usage instructions
 
