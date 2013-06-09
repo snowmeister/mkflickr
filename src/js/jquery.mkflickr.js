@@ -12,7 +12,7 @@
     defaults = {
       apiKey: '',
       userId: '',
-      containerCssClass: 'gallery',
+      containerCssClass: 'flickr-region',
       itemCount: 20,
       baseUrl: 'http://api.flickr.com/services/rest/?method=',
       tag: 'span'
@@ -40,7 +40,6 @@
       return this;
     },
     buildGallery: function (data) {
-      $('body').append('we have data and are building the gallery' + data.photos.photo.length);
       var arrPhotos = data.photos.photo;
       var sTag = this.settings.tag;
       var me = this;
