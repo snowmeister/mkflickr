@@ -1,0 +1,22 @@
+{
+  "name": "jquery.mkflickr",
+  "version": "0.1.0",
+  "description": "A jquery plugin to generate a jquery and CSS3 based Flickr feed gallery",
+  "main": "jquery.mkflickr.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-csslint": "~0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "flickr",
+    "jquery",
+    "gallery",
+    "css3"
+  ],
+  "author": "Mark Kennard (AKA snowmeister)",
+  "license": "MIT"
+}
