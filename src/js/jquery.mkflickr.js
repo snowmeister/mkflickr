@@ -96,7 +96,6 @@
           } else {
             me.galleryError(data);
           }
-
         }
       });
       return this;
