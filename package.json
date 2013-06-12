@@ -20,7 +20,8 @@
     "flickr",
     "jquery",
     "gallery",
-    "css3"
+    "css3",
+    "javascript"
   ],
   "author": "Mark Kennard (AKA snowmeister)",
   "license": "MIT"

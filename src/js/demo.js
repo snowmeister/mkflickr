@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	console.log('we are calling it..')
 	$("#gallery-test").mkflickr({
 		/** NOTE - Change this to YOUR Flickr Developers API Key */
 		apiKey: 'd980cbf534d97b23fa2664329cc40f98',
