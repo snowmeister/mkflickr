@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
@@ -10,11 +10,11 @@ module.exports = function(grunt) {
         jshintrc: "node_modules/grunt-contrib-jshint/.jshintrc"
       }
     },
-    jsdoc : {
-        dist : {
-            src: ['src/js/jquery.mkflickr.js'], 
-            dest: 'build/doc'
-        }
+    jsdoc: {
+      dist: {
+        src: ['src/js/jquery.mkflickr.js'],
+        dest: 'build/doc'
+      }
     },
     uglify: {
       options: {
@@ -47,6 +47,18 @@ module.exports = function(grunt) {
         dest: "build/css/",
         ext: ".mkflickr.min.css"
       }
+    },
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'ftp.snowmeister.co.uk',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'build/',
+        dest: '/htdocs/lab/mkflickr',
+        exclusions: ['.DS_Store','/*/.DS_Store', 'node_modules/', 'jquery.mkflickr.sublime-project', 'jquery.mkflickr.sublime-workspace']
+      }
     }
   });
 
@@ -56,6 +68,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-ftp-deploy');
   //grunt.loadNpmTasks("grunt-contrib-concat")
   // Default task(s).
   grunt.registerTask("default", ["jshint", "uglify", "csslint", "cssmin"]);

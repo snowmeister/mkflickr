@@ -4,7 +4,8 @@
 /*.sublime-project
 *.sublime-workspace
 sftp-config*.json
-
+/*.ftppass
+.ftppass
 /*/.DS_Store
 .DS_Store
 /node_modules/*
